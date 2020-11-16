@@ -3,7 +3,7 @@ require 'slack-notifier'
 
 class Elevator < ApplicationRecord
   belongs_to :column
-  has_many :interventions
+  has_many :interventions, through: :column
 
   # around_update :send_slack_notif
   # after_update :twilio_txt

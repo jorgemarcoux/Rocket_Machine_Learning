@@ -41,6 +41,9 @@
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
             <% if can? :read, Quote %>
+              <li><!-- INTERVENTION -->
+                <%= link_to 'INTERVENTION', new_intervention_path %>
+              </li>
               <li><!-- BACKOFFICE -->
                 <%= link_to 'BACKOFFICE', rails_admin_path %>
               </li>

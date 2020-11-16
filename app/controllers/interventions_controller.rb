@@ -1,4 +1,5 @@
 class InterventionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_intervention, only: [:show, :edit, :update, :destroy]
 
   # GET /interventions
@@ -6,7 +7,7 @@ class InterventionsController < ApplicationController
   def index
     @interventions = Intervention.all
   end
-
+  
   # GET /interventions/1
   # GET /interventions/1.json
   def show

@@ -5,12 +5,12 @@
 
   <div class="form-inputs">
     <%= f.input :author %>
-    <%= f.association :customer %>
-    <%= f.association :building %>
-    <%= f.association :battery %>
-    <%= f.association :column %>
-    <%= f.association :elevator %>
-    <%= f.association :employee %>
+    <%= f.association :customer, label_method: :company_name, value_method: :id, prompt: "Choose a Customer" %>
+    <%= f.association :building, label_method: :customer_id, value_method: :id, prompt: "Choose a Building" %>
+    <%= f.association :battery, label_method: :id, value_method: :id, prompt: "None" %>
+    <%= f.association :column, label_method: :id, value_method: :id, prompt: "None" %>
+    <%= f.association :elevator, label_method: :id, value_method: :id, prompt: "None" %>
+    <%= f.association :employee, label_method: :id, value_method: :id, prompt: "None" %>
     <%= f.input :start_date_and_time_of_the_intervention %>
     <%= f.input :end_date_and_time_of_the_intervention %>
     <%= f.input :result %>
