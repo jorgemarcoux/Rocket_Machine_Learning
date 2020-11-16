@@ -6,5 +6,5 @@ class Building < ApplicationRecord
   has_one :address, :dependent => :delete
   has_one :building_detail, :dependent => :delete
   has_many :batteries, :dependent => :delete_all
-  has_many :interventions, through: :customer
+  has_many :interventions
 end

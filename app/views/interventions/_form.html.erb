@@ -2,23 +2,32 @@
 <%= simple_form_for(@intervention) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :author %>
-    <%= f.association :customer, label_method: :company_name, value_method: :id, prompt: "Choose a Customer" %>
-    <%= f.association :building, label_method: :customer_id, value_method: :id, prompt: "Choose a Building" %>
-    <%= f.association :battery, label_method: :id, value_method: :id, prompt: "None" %>
-    <%= f.association :column, label_method: :id, value_method: :id, prompt: "None" %>
-    <%= f.association :elevator, label_method: :id, value_method: :id, prompt: "None" %>
-    <%= f.association :employee, label_method: :id, value_method: :id, prompt: "None" %>
-    <%= f.input :start_date_and_time_of_the_intervention %>
-    <%= f.input :end_date_and_time_of_the_intervention %>
-    <%= f.input :result %>
-    <%= f.input :report %>
-    <%= f.input :status %>
-  </div>
-
+<div class="container">    
+    <div class="field">
+        <%= f.label :customer_id %>
+        <%= f.collection_select :customer_id, Customer.order(:company_name), :id, :company_name, include_blank: true%>
+    </div>
+    <div class="field">
+        <%= f.label :building_id %>
+        <%= f.grouped_collection_select :building_id, Customer.order(:company_name), :buildings, :company_name, :id, :id, include_blank: true %>
+    </div>
+    <div class="field">
+        <%= f.label :battery_id %>
+        <%= f.grouped_collection_select :battery_id, Building.order(:id), :batteries, :id, :id, :id, include_blank: true %>
+    </div>
+    <div class="field">
+        <%= f.label :column_id %>
+        <%= f.grouped_collection_select :column_id, Battery.order(:id), :columns, :id, :id, :id, include_blank: true %>
+    </div>
+    <div class="field">
+        <%= f.label :elevator_id %>
+        <%= f.grouped_collection_select :elevator_id, Column.order(:id), :elevators, :id, :id, :id, include_blank: true %>
+    </div>
+</div>
+<div class="form-inputs row text-center">
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-lg btn-red" %>
   </div>
+</div>
+
 <% end %>
