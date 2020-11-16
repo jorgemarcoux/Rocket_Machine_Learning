@@ -2,6 +2,7 @@ class Customer < ApplicationRecord
   has_many :buildings
   has_one :address, :dependent => :delete
   belongs_to :user
+  has_many :interventions
 
   # after_create :dropbox
   # after_update :dropbox

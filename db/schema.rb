@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_201013) do
+ActiveRecord::Schema.define(version: 2020_11_16_155736) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "building_id"
@@ -133,6 +133,29 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
     t.index ["user_id"], name: "index_employees_on_user_id"
   end
 
+  create_table "interventions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "author"
+    t.bigint "customer_id"
+    t.bigint "building_id"
+    t.bigint "battery_id"
+    t.bigint "column_id"
+    t.bigint "elevator_id"
+    t.bigint "employee_id"
+    t.string "start_date_and_time_of_the_intervention"
+    t.string "end_date_and_time_of_the_intervention"
+    t.string "result"
+    t.text "report"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["battery_id"], name: "index_interventions_on_battery_id"
+    t.index ["building_id"], name: "index_interventions_on_building_id"
+    t.index ["column_id"], name: "index_interventions_on_column_id"
+    t.index ["customer_id"], name: "index_interventions_on_customer_id"
+    t.index ["elevator_id"], name: "index_interventions_on_elevator_id"
+    t.index ["employee_id"], name: "index_interventions_on_employee_id"
+  end
+
   create_table "leads", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
@@ -193,4 +216,10 @@ ActiveRecord::Schema.define(version: 2020_10_19_201013) do
   add_foreign_key "building_details", "buildings"
   add_foreign_key "buildings", "employees", column: "admin_contact_id"
   add_foreign_key "buildings", "employees", column: "technical_contact_id"
+  add_foreign_key "interventions", "batteries"
+  add_foreign_key "interventions", "buildings"
+  add_foreign_key "interventions", "columns"
+  add_foreign_key "interventions", "customers"
+  add_foreign_key "interventions", "elevators"
+  add_foreign_key "interventions", "employees"
 end

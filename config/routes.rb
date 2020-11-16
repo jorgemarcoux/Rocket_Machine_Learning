@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :interventions
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
 
   resources :leads
