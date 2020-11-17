@@ -10,9 +10,9 @@ class CreateInterventions < ActiveRecord::Migration[5.2]
       t.references :employee, foreign_key: true
       t.string :start_date_and_time_of_the_intervention
       t.string :end_date_and_time_of_the_intervention
-      t.string :result
+      t.string :result, default: "Incomplete"
       t.text :report
-      t.string :status
+      t.string :status, default: "Pending"
 
       t.timestamps
     end

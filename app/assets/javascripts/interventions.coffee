@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
+    $('#intervention_building_id').parent().hide()
     buildings = $('#intervention_building_id').html()
     #console.log(buildings)
     $('#intervention_customer_id').click ->
@@ -10,7 +11,12 @@ jQuery ->
         #console.log(building_options)
         if building_options
             $('#intervention_building_id').html(building_options)
+            $('#intervention_building_id').parent().show()
+        else
+            $('#intervention_building_id').empty()
+            $('#intervention_building_id').parent().hide()
 
+    $('#intervention_battery_id').parent().hide()
     batteries = $('#intervention_battery_id').html()
     #console.log(batteries)
     $('#intervention_building_id').click ->
@@ -19,7 +25,12 @@ jQuery ->
         #console.log(building_options)
         if batteries_options
             $('#intervention_battery_id').html(batteries_options)
-    
+            $('#intervention_battery_id').parent().show()
+        else 
+            $('#intervention_battery_id').empty()
+            $('#intervention_battery_id').parent().hide()
+
+    $('#intervention_column_id').parent().hide()
     columns = $('#intervention_column_id').html()
     #console.log(columns)
     $('#intervention_battery_id').click ->
@@ -29,7 +40,12 @@ jQuery ->
 
         if columns_options
             $('#intervention_column_id').html(columns_options)
+            $('#intervention_column_id').parent().show()
+        else 
+            $('#intervention_column_id').empty()
+            $('#intervention_column_id').parent().hide()
 
+    $('#intervention_elevator_id').parent().hide()
     elevators = $('#intervention_elevator_id').html()
     $('#intervention_column_id').click ->
         #console.log(elevators)
@@ -37,5 +53,8 @@ jQuery ->
         elevators_options = $(elevators).filter("optgroup[label='#{column}']").html()
 
         if elevators_options
-            $('#intervention_elevator_id').html(elevators_options)    
-    
+            $('#intervention_elevator_id').html(elevators_options)
+            $('#intervention_elevator_id').parent().show()    
+        else 
+            $('#intervention_elevator_id').empty()
+            $('#intervention_elevator_id').parent().hide()
