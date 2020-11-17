@@ -2,51 +2,44 @@
 <%= simple_form_for(@intervention) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>   
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="field">
-          <%= f.label :customer_id %>
-          <%= f.collection_select :customer_id, Customer.order(:company_name), :id, :company_name, include_blank: true%>
-        </div>
-        <div class="field">
-          <%= f.label :building_id %>
-          <%= f.grouped_collection_select :building_id, Customer.order(:company_name), :buildings, :company_name, :id, :id, include_blank: true %>
-        </div>
-        <div class="field">
-          <%= f.label :battery_id %>
-          <%= f.grouped_collection_select :battery_id, Building.order(:id), :batteries, :id, :id, :id, include_blank: true %>
-        </div>
-        <div class="field">
-          <%= f.label :column_id %>
-          <%= f.grouped_collection_select :column_id, Battery.order(:id), :columns, :id, :id, :id, include_blank: true %>
-        </div>
-        <div class="field">
-          <%= f.label :elevator_id %>
-          <%= f.grouped_collection_select :elevator_id, Column.order(:id), :elevators, :id, :id, :id, include_blank: true %>
-        </div>
+<div class="container-fluid">
+  <div class="card card-default">
+    <div class="card-heading card-heading-transparent">
+      <h2 class="card-title bold text-center">Intervention Details</h2>
+    </div>
+    <div class="card-block">
+      <div class="field col-md-12">
+        <%= f.label :customer_id %>
+        <%= f.collection_select :customer_id, Customer.order(:company_name), :id, :company_name, include_blank: true%>
       </div>
-      <div class="col-sm">
-        <div class="field">
-          <%= f.association :employee, label_method: :first_name, value_method: :id, prompt: "None" %>
-        </div>
-        <div class="field">
-          <%= f.input :start_date_and_time_of_the_intervention %>
-        </div>
-        <div class="field">
-          <%= f.input :end_date_and_time_of_the_intervention %>
-        </div>
-        <div class="field">
-          <%= f.input :result %>
-        </div>
-        <div class="field">
-          <%= f.input :status %>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, class: "btn btn-lg btn-red" %>
-        </div>
+      <div class="field col-md-12">
+        <%= f.label :building_id %>
+        <%= f.grouped_collection_select :building_id, Customer.order(:company_name), :buildings, :company_name, :id, :id, include_blank: true %>
+      </div>
+      <div class="field col-md-12">
+        <%= f.label :battery_id %>
+        <%= f.grouped_collection_select :battery_id, Building.order(:id), :batteries, :id, :id, :id, include_blank: true %>
+      </div>
+      <div class="field col-md-12">
+        <%= f.label :column_id %>
+        <%= f.grouped_collection_select :column_id, Battery.order(:id), :columns, :id, :id, :id, include_blank: true %>
+      </div>
+      <div class="field col-md-12">
+        <%= f.label :elevator_id %>
+        <%= f.grouped_collection_select :elevator_id, Column.order(:id), :elevators, :id, :id, :id, include_blank: true %>
+      </div>
+      <div class="field">
+        <%= f.association :employee, label_method: :first_name, value_method: :id, prompt: "None" %>
+      </div>
+      <div class="field">
+        <%= f.input :report %>
+      </div>
+    </div>
+    <div class="card-block">
+      <div class="form-actions col-md-12">
+        <%= f.button :submit, class: "btn btn-lg btn-red" %>
       </div>
     </div>
   </div>
+</div>
 <% end %>
