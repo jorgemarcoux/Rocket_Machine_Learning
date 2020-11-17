@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
+    none = '<option value="">None</option>';
     $('#intervention_building_id').parent().hide()
     buildings = $('#intervention_building_id').html()
     #console.log(buildings)
@@ -24,7 +25,7 @@ jQuery ->
         batteries_options = $(batteries).filter("optgroup[label='#{building}']").html()
         #console.log(building_options)
         if batteries_options
-            $('#intervention_battery_id').html(batteries_options)
+            $('#intervention_battery_id').html(none + batteries_options)
             $('#intervention_battery_id').parent().show()
         else 
             $('#intervention_battery_id').empty()
@@ -39,7 +40,7 @@ jQuery ->
         columns_options = $(columns).filter("optgroup[label='#{battery}']").html()
 
         if columns_options
-            $('#intervention_column_id').html(columns_options)
+            $('#intervention_column_id').html(none + columns_options)
             $('#intervention_column_id').parent().show()
         else 
             $('#intervention_column_id').empty()
@@ -53,7 +54,7 @@ jQuery ->
         elevators_options = $(elevators).filter("optgroup[label='#{column}']").html()
 
         if elevators_options
-            $('#intervention_elevator_id').html(elevators_options)
+            $('#intervention_elevator_id').html(none + elevators_options)
             $('#intervention_elevator_id').parent().show()    
         else 
             $('#intervention_elevator_id').empty()

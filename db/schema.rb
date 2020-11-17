@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_155736) do
+ActiveRecord::Schema.define(version: 2020_11_17_123727) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "building_id"
@@ -141,13 +141,13 @@ ActiveRecord::Schema.define(version: 2020_11_16_155736) do
     t.bigint "column_id"
     t.bigint "elevator_id"
     t.bigint "employee_id"
-    t.string "start_date_and_time_of_the_intervention"
-    t.string "end_date_and_time_of_the_intervention"
     t.string "result", default: "Incomplete"
     t.text "report"
     t.string "status", default: "Pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_date_and_time_of_the_intervention"
+    t.datetime "end_date_and_time_of_the_intervention"
     t.index ["battery_id"], name: "index_interventions_on_battery_id"
     t.index ["building_id"], name: "index_interventions_on_building_id"
     t.index ["column_id"], name: "index_interventions_on_column_id"
