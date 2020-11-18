@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 jQuery ->
     none = '<option value="">None</option>';
+    nothing = '<option value=""></option>';
     $('#intervention_building_id').parent().hide()
     buildings = $('#intervention_building_id').html()
     #console.log(buildings)
@@ -11,7 +12,7 @@ jQuery ->
         building_options = $(buildings).filter("optgroup[label='#{customer}']").html()
         #console.log(building_options)
         if building_options
-            $('#intervention_building_id').html(building_options)
+            $('#intervention_building_id').html(nothing + building_options)
             $('#intervention_building_id').parent().show()
         else
             $('#intervention_building_id').empty()

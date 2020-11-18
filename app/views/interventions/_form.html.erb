@@ -1,62 +1,65 @@
 <%= simple_form_for(@intervention) do |f| %>
   <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>   
-	<div class="card card-default">
-		<div class="card-heading card-heading-transparent">
-			<h2 class="card-title bold text-center">Intervention Details</h2>
-		</div>
-		<div class="row">
-			<div class="col-md-10">
-					<table class="table table-bordered table-vertical-middle text-blue">
-						<tbody>
-							<tr>
-								<td><%= f.label :customer_id %></td>
-								<td><%= f.collection_select :customer_id, Customer.order(:company_name), :id, :company_name, include_blank: true%></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><%= f.label :building_id %></td>
-								<td><%= f.grouped_collection_select :building_id, Customer.order(:company_name), :buildings, :company_name, :id, :id, include_blank: true %></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><%= f.label :battery_id %></td>
-								<td><%= f.grouped_collection_select :battery_id, Building.order(:id), :batteries, :id, :id, :id, include_blank: true %></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><%= f.label :column_id %></td>
-								<td><%= f.grouped_collection_select :column_id, Battery.order(:id), :columns, :id, :id, :id, include_blank: true %></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><%= f.label :elevator_id %></td>
-								<td><%= f.grouped_collection_select :elevator_id, Column.order(:id), :elevators, :id, :id, :id, include_blank: true %></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><%= f.label :employee_id %></td>
-								<td><%= f.collection_select :employee_id, Employee.order(:first_name), :id, :first_name, include_blank: true%></td>
-							</tr>
-						</tbody>
-						<tbody>
-							<tr>
-								<td><label class="fs-16">Description</label></td>
-								<td><%= f.text_area :report, :type => 'text', :size => "width:100%"%></td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="card-block">
-						<div class="form-actions col-md-12">
-        			<%= f.button :submit, class: "btn btn-lg btn-red" %>
-      			</div>
-					</div>
-			</div>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.hidden_field :author, value: current_user.id %>   
+<div class="container card card-default">	
+	<div class="card-heading card-heading-transparent">
+		<h2 class="card-title bold text-center">Intervention Details</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table table-bordered table-vertical-middle text-blue card-block">
+				<tbody>
+					<tr>
+						<td><%= f.label :customer_id %></td>
+						<td><%= f.collection_select :customer_id, Customer.order(:company_name), :id, :company_name, include_blank: true%></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><%= f.label :building_id %></td>
+						<td><%= f.grouped_collection_select :building_id, Customer.order(:company_name), :buildings, :company_name, :id, :id, include_blank: true %></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><%= f.label :battery_id %></td>
+						<td><%= f.grouped_collection_select :battery_id, Building.order(:id), :batteries, :id, :id, :id, include_blank: true %></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><%= f.label :column_id %></td>
+						<td><%= f.grouped_collection_select :column_id, Battery.order(:id), :columns, :id, :id, :id, include_blank: true %></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><%= f.label :elevator_id %></td>
+						<td><%= f.grouped_collection_select :elevator_id, Column.order(:id), :elevators, :id, :id, :id, include_blank: true %></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><%= f.label :employee_id %></td>
+						<td><%= f.collection_select :employee_id, Employee.order(:first_name), :id, :custom_label_method, include_blank: true%></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td><label class="fs-16">Description</label></td>
+						<td><%= f.text_area :report, :type => 'text', :size => "width:100%"%></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered card-block text-center">
+					<tbody>
+						<tr>
+        			<td><%= f.button :submit, class: "btn btn-lg btn-red" %></td>
+						</tr>	
+					</tbody>
+			</table>
 		</div>
 	</div>
+</div>
 <% end %>
