@@ -31,7 +31,7 @@ class Elevator < ApplicationRecord
       @client = Twilio::REST::Client.new(account_sid, auth_token)
 
       @client.messages.create(
-        to: ENV['PHONE_NUMBER'],
+        to: to,
         from: '+17407497629',
         body: "Hi this is a message from Rocket Elevators. Elevator ##{self.id} now has the status of #{self.elevator_status}"
       )
