@@ -13,8 +13,6 @@ class LeadsController < ApplicationController
 
         @lead.save
 
-        sendMail
-
         respond_to do |format|
             if @lead.save && user_signed_in?
                 format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully registered !' }
