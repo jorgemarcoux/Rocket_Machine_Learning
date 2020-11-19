@@ -55,4 +55,3 @@ public/uploads/lead/attachmenttwilio.env
 # Ignore application configuration
 /config/application.yml
 
-/public/outputs.mp3
