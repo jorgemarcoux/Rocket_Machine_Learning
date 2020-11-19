@@ -5,8 +5,8 @@ class Elevator < ApplicationRecord
   belongs_to :column
   has_many :interventions
 
-  # around_update :send_slack_notif
-  #after_update :twilio_txt
+  around_update :send_slack_notif
+  after_update :twilio_txt
 
   private
 
@@ -25,9 +25,9 @@ class Elevator < ApplicationRecord
       require("bundler")
       Bundler.require()
 
-      account_sid = ENV['TWITLIO_ACCOUNT_SID']
+      account_sid = ENV['TWILIO_ACCOUNT_SID']
       auth_token = ENV['TWILIO_AUTH_TOKEN']
-      to = '15819831152'
+      to = '15817771245'
       @client = Twilio::REST::Client.new(account_sid, auth_token)
 
       @client.messages.create(
