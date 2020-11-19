@@ -6,7 +6,7 @@ The main goal for this week was to revisit the concepts and consolidate what we 
  - user : `admin@admin.com`
  - password : `admin123`
 
-## Sending a service ticket to Zendesk
+## CREATING A TICKET IN ZENDESK
 
 When an Intervention form is created a new ticket will be created in Zendesk. You can access this platform with this **[LINK](https://apageau.zendesk.com/)**. Info for the connexion will be send somewhere else.
 
