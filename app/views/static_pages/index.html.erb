@@ -1,4 +1,5 @@
-    <!-- REVOLUTION SLIDER -->
+   <!-- REVOLUTION SLIDER -->
+<div id="home"></div>
 <div class="slider fullwidthbanner-container roundedcorners">
   <div class="fullwidthbanner hide-sm" data-height="600" data-shadow="0" data-navigationStyle="preview2">
     <ul class="hide">
@@ -190,7 +191,7 @@
         <%= image_tag("services/elevator_3_1920x1000.png", :alt => "image", :class => "img-fluid") %>
         <h3 class="mt-10">Award Winning Elevators!</h3>
         <p>Rocket Elevators has gained many prices over the years, notably the 2020 golden gear award. Read more below !</p>
-        <a href="#portfolio" class="btn btn-lg btn-default">OUR SUCCESS !</a>
+        <%= link_to 'OUR SUCCESS', root_path(anchor: "portfolio"), 'data-turbolinks': false, class: 'btn btn-default btn-lg' %>
       </div>
       <div class="col-lg-4 col-md-6 col-12 text-center">
         <%= image_tag("services/elevator_4_1920x1000.png", :alt => "image", :class => "img-fluid") %>
@@ -551,32 +552,6 @@
       </div>
       <div class="testimonial">
         <figure>
-          <%= image_tag("CEO/William_Sinclair.png", :alt => "image", :class => "rounded") %>
-        </figure>
-        <div class="testimonial-content p-0">
-          <p class="lead">"Hi There !"</p>
-          <%# William should be editing this line %>
-          <cite>
-            William Sinclair
-            <span>Rocket Elevators' Employee</span>
-          </cite>
-        </div>
-      </div>
-      <div class="testimonial">
-        <figure>
-          <%= image_tag("CEO/Frimina_Zaddi.jpg", :alt => "image", :class => "rounded") %>
-        </figure>
-        <div class="testimonial-content p-0">
-          <p class="lead">"Hi There !"</p>
-          <%# William should be editing this line %>
-          <cite>
-            Frimina Zaddi
-            <span>Rocket Elevators' Employee</span>
-          </cite>
-        </div>
-      </div>
-      <div class="testimonial">
-        <figure>
           <%= image_tag("CEO/loic_rico.png", :alt => "image", :class => "rounded") %>
         </figure>
         <div class="testimonial-content p-0">
@@ -748,6 +723,18 @@
 
 <script>
   plugin_path = '../assets/';
+  $('.form-actions').addClass('center')
+  $('.form-group').addClass('col-4 mt-15')
+  $('.lead_project_description').removeClass('col-4').addClass('col-6')
+  $('.lead_message').removeClass('col-4').addClass('col-6')
+  $('.form-control-file').removeClass('form-control-file').addClass('form-control')
+  $('textarea').css('height', '260px')
+  $('.send-info').removeClass('col-4').addClass('col-2')
+  $('select').addClass('text-dark')
+  $('.form-group.radio_buttons').removeClass('col-4').addClass('col-12 row')
+  $('.form-check').addClass('col-4').css('padding-left', '120px')
+  $('.form-check-input').css('display', 'inline-block')
+  $('.col-form-label').addClass('text-center')
 </script>
 <a href="#" id="toTop">
   <span class="arrow-top">▲</span>

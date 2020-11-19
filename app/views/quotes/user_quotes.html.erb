@@ -40,12 +40,12 @@
       </div>
     </div>
   </div>
-  <a href="/#contact">
+  <%= link_to root_path(anchor: "contact"), 'data-turbolinks': false do %>
     <span class="btn btn-xlg btn-red fs-20 fullwidth m-0 rad-0 p-40">
       <span class="font-lato fs-30">
         Ready to move forward? 
         <strong>Contact Us &raquo;</strong>
       </span>
     </span>
-  </a>
+  <% end %>
 </section>

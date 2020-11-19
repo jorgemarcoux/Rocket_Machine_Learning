@@ -470,3 +470,28 @@ User.create(
     is_admin: true,
     is_user: false
 )
+
+20.times do
+    customer_id = rand(Customer.first[:id]..Customer.last[:id])
+    building_id = rand(Building.first[:id]..Building.last[:id])
+    battery_id = rand(Battery.first[:id]..Battery.last[:id])
+    column_id = rand(Column.first[:id]..Column.last[:id])
+    employee_id = rand(Employee.first[:id]..Employee.last[:id])
+    elevator_id = rand(Elevator.first[:id]..Elevator.last[:id])
+    status = ["Pending", "InProgress", "Completed"]
+    
+    if status == "Pending" || "InProgress"
+        result = "Incomplete"
+    else
+        result = "Complete"
+        end_date_and_time_of_the_intervention = Faker::Date.between(from: '2020-08-02', to: '2020-11-18')
+
+    end
+    if status = "InProgress" || "Completed"
+        start_date_and_time_of_the_intervention = Faker::Date.between(from: '2020-05-01', to: '2020-08-02')
+    end
+    author = rand(Employee.first[:id]..Employee.last[:id])
+    report = Faker::Lorem.sentence(word_count: 10, supplemental: true, random_words_to_add: 4)
+    Intervention.create(customer_id:customer_id, building_id:building_id, battery_id:battery_id, column_id:column_id, employee_id:employee_id, elevator_id:elevator_id, status:status, result:result, 
+        end_date_and_time_of_the_intervention:end_date_and_time_of_the_intervention, start_date_and_time_of_the_intervention:start_date_and_time_of_the_intervention, author:author, report:report)
+end
