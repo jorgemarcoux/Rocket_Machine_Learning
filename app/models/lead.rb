@@ -13,7 +13,8 @@ class Lead < ApplicationRecord
     
     mount_uploader :attachment, AttachmentUploader
 
-    #after_create :new_lead_ticket
+    after_create :new_lead_ticket
+    after_create :sendMail
 
     def new_lead_ticket
       client = ZendeskAPI::Client.new do |config|
@@ -35,4 +36,29 @@ class Lead < ApplicationRecord
       :type => "Question"
       )
     end
+    
+    def sendMail
+      email = self.email
+      full_name = self.full_name
+      project_name = self.project_name
+      phone = self.phone
+
+      mail = SendGrid::Mail.new
+      mail.from = SendGrid::Email.new(email: "antopageau@hotmail.com")
+
+      personalization = SendGrid::Personalization.new
+      personalization.add_to(SendGrid::Email.new(email: email))
+      personalization.add_dynamic_template_data({
+          "full_name" => full_name,
+          "project_name" => project_name,
+          "phone" => phone
+      })
+
+      mail.add_personalization(personalization)
+      mail.template_id = 'd-a3d530680fff48d0a0209903db23ebcb'
+
+      sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+      
+      response = sg.client.mail._('send').post(request_body: mail.to_json)
+  end
 end

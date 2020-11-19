@@ -477,9 +477,8 @@ User.create(
     battery_id = rand(Battery.first[:id]..Battery.last[:id])
     column_id = rand(Column.first[:id]..Column.last[:id])
     employee_id = rand(Employee.first[:id]..Employee.last[:id])
-    elevator_id = rand(Elevator.first[:id]..Elevator.last[:id])
-    status = ["Pending", "InProgress", "Completed"]
-    
+    elevator_id = rand(Elevator.first[:id]..Elevator.last[:id])    
+    status = ["Pending", "InProgress", "Completed"].sample
     if status == "Pending" || "InProgress"
         result = "Incomplete"
     else
@@ -487,7 +486,7 @@ User.create(
         end_date_and_time_of_the_intervention = Faker::Date.between(from: '2020-08-02', to: '2020-11-18')
 
     end
-    if status = "InProgress" || "Completed"
+    if status == "InProgress" || "Completed"
         start_date_and_time_of_the_intervention = Faker::Date.between(from: '2020-05-01', to: '2020-08-02')
     end
     author = rand(Employee.first[:id]..Employee.last[:id])

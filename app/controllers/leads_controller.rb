@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
 
         @lead.save
 
-        # sendMail
+        sendMail
 
         respond_to do |format|
             if @lead.save && user_signed_in?
@@ -24,31 +24,6 @@ class LeadsController < ApplicationController
                 format.html { render :new }
             end
         end
-    end
-
-    def sendMail
-        email = @lead.email
-        full_name = @lead.full_name
-        project_name = @lead.project_name
-        phone = @lead.phone
-
-        mail = SendGrid::Mail.new
-        mail.from = SendGrid::Email.new(email: "rocketelevatorswk7@gmail.com")
-
-        personalization = SendGrid::Personalization.new
-        personalization.add_to(SendGrid::Email.new(email: email))
-        personalization.add_dynamic_template_data({
-            "full_name" => full_name,
-            "project_name" => project_name,
-            "phone" => phone
-        })
-
-        mail.add_personalization(personalization)
-        mail.template_id = 'd-15d6bef02786488fa205bd75c1fa8f51'
-
-        sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-        
-        response = sg.client.mail._('send').post(request_body: mail.to_json)
     end
 
     def edit
