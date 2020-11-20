@@ -14,6 +14,26 @@ When an Intervention form is created a new ticket will be created in Zendesk. Yo
 
 The rest api was made on another **[REPOSITORY](https://github.com/AnthonyPageau/Rocket_Elevator_Foundation_Rest)**. All information will be provided on it.
 
+## DropBox API
+	 - 
+	 - On the creation of a client  and/or at the update of a client's information , when you press save at the bottom, all the attached files will be sent to Dropbox under a new **Folder in the name of the client**. You can see this Dropbox page by heading here https://www.dropbox.com/sh/zb6xj75w2e3972g/AADqku3hBVfAttHrNzFVoAAka?dl=0 . All the requested information is inside the **Rocket Folder** which is inside the Apps folder.
+
+## Slack API
+	 - 
+	 - To see the status changes of an elevator, you must be inside the **Rocket Elevators Slack  workspace** in the **#elevator_operation** channel.
+	 - To receive a notification you must go as an **admin** in the backoffice of the website then you manually change the status of an elevator and click save at the bottom. You will then receive a notification telling you something like that: "The Elevator #237 with Serial Number 666-66-0437 changed status from **ACTIVE** to **Intervention**"
+	 
+## IBM Watson API
+	 - 
+	 - As an admin , access the Backoffice of the website and select the **Products Information** tab in the dashboard page. You will see a media player with a play button press play and you will hear information about the current status of the company based on the requirement  sheet.
+	 - To refresh the message, if you have deleted ,added or updated data  in the elevators and building tables, you **must log out** of the admin user an **log back in as the admin**.
+	
+## SendGrid API
+	 - 
+	 - On the creation of a lead  (when it is saved) an email will be sent to the email address provided in the **Email** field of said Lead. Please provide a valid e-mail 	   address to to receive the E-mail. For example : example@example.com  
+	 - Sendgrid Code flow : User fills contact form --> LeadsController#Create --> Saves to database --> Sends email to user --> Successfully sent contact form flash 		   message.(Your lead has been succesfully registered)
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
