@@ -7,4 +7,8 @@ class Building < ApplicationRecord
   has_one :building_detail, :dependent => :delete
   has_many :batteries, :dependent => :delete_all
   has_many :interventions
+
+  def building
+    return "Building ##{self.id}"
+  end
 end

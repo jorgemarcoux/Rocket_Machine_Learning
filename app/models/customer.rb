@@ -4,8 +4,8 @@ class Customer < ApplicationRecord
   belongs_to :user
   has_many :interventions
 
-  after_create :dropbox
-  after_update :dropbox
+  #after_create :dropbox
+  #after_update :dropbox
 
   def dropbox
     user = User.find(self.user_id)

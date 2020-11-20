@@ -5,8 +5,12 @@ class Elevator < ApplicationRecord
   belongs_to :column
   has_many :interventions
 
-  around_update :send_slack_notif
-  after_update :twilio_txt
+  #around_update :send_slack_notif
+  #after_update :twilio_txt
+
+  def elevator
+    return "Elevator ##{self.id}"
+  end
 
   private
 
@@ -31,7 +35,7 @@ class Elevator < ApplicationRecord
       @client = Twilio::REST::Client.new(account_sid, auth_token)
 
       @client.messages.create(
-        to: to,
+        to: ENV['PHONE_NUMBER'],
         from: '+17407497629',
         body: "Hi this is a message from Rocket Elevators. Elevator ##{self.id} now has the status of #{self.elevator_status}"
       )

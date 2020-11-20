@@ -13,8 +13,8 @@ class Lead < ApplicationRecord
     
     mount_uploader :attachment, AttachmentUploader
 
-    after_create :new_lead_ticket
-    after_create :sendMail
+    #after_create :new_lead_ticket
+    #after_create :sendMail
 
     def new_lead_ticket
       client = ZendeskAPI::Client.new do |config|
