@@ -15,7 +15,7 @@ When an Intervention form is created a new ticket will be created in Zendesk. Yo
 The rest api was made on another **[REPOSITORY](https://github.com/AnthonyPageau/Rocket_Elevator_Foundation_Rest)**. All information will be provided on it.
 
 ## DropBox API
-On the creation of a client  and/or at the update of a client's information , when you press save at the bottom, all the attached files will be sent to Dropbox under a new **Folder in the name of the client**. You can see this Dropbox page by heading here https://www.dropbox.com/sh/zb6xj75w2e3972g/AADqku3hBVfAttHrNzFVoAAka?dl=0 . All the requested information is inside the **Rocket Folder** which is inside the Apps folder.
+On the creation of a client  and/or at the update of a client's information , when you press save at the bottom, all the attached files will be sent to Dropbox under a new **Folder in the name of the client**. You can see this Dropbox page by heading here https://www.dropbox.com/sh/o6qu8kkd5rkdio8/AABJ4u9x1a_dXz0uBsUbO80wa?dl=0 . All the requested information is inside the **Rocket Folder** which is inside the Apps folder.
 
 ## Slack API
 To see the status changes of an elevator, you must be inside the **Rocket Elevators Slack  workspace** in the **#elevator_operation** channel.
