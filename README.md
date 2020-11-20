@@ -1,3 +1,24 @@
+# Rocket Elevators Foundation Week 9
+
+The main goal for this week was to revisit the concepts and consolidate what we learned in the past 8 weeks by creating a new table, a new form to formulate a request, save those requests in the database, send those request to Zendesk and add an api to return new interventions requests
+
+**Here is the information you must enter in the sign in page to access the BackOffice :**
+ - user : `admin@admin.com`
+ - password : `admin123`
+
+## Creating a Ticket in Zendesk
+
+When an Intervention form is created a new ticket will be created in Zendesk. You can access this platform with this **[LINK](https://apageau.zendesk.com/)**. Info for the connexion will be send somewhere else.
+
+## Creating new GET and PUT requests in the REST API
+
+The rest api was made on another **[REPOSITORY](https://github.com/AnthonyPageau/Rocket_Elevator_Foundation_Rest)**. All information will be provided on it.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 # Rocket Elevators Information System
 
 ## [](https://github.com/ricoloic/Rocket_Elevators_API#week-7-team-project-description)Week-7, Team Project Description
