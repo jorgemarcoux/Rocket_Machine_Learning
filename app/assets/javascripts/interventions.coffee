@@ -4,6 +4,9 @@
 jQuery ->
     none = '<option value="">None</option>';
     nothing = '<option value=""></option>';
+
+
+    #BUILDINGS
     $('#intervention_building_id').parent().hide()
     buildings = $('#intervention_building_id').html()
     #console.log(buildings)
@@ -18,6 +21,7 @@ jQuery ->
             $('#intervention_building_id').empty()
             $('#intervention_building_id').parent().hide()
 
+    #BATERRIES
     $('#intervention_battery_id').parent().hide()
     batteries = $('#intervention_battery_id').html()
     #console.log(batteries)
@@ -32,6 +36,7 @@ jQuery ->
             $('#intervention_battery_id').empty()
             $('#intervention_battery_id').parent().hide()
 
+    #COLUMNS
     $('#intervention_column_id').parent().hide()
     columns = $('#intervention_column_id').html()
     #console.log(columns)
@@ -47,6 +52,7 @@ jQuery ->
             $('#intervention_column_id').empty()
             $('#intervention_column_id').parent().hide()
 
+    #ELEVATORS
     $('#intervention_elevator_id').parent().hide()
     elevators = $('#intervention_elevator_id').html()
     $('#intervention_column_id').click ->

@@ -40,18 +40,13 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
-            <% if can? :read, Quote %>
-              <li class="dropdown nav-animate-fadeIn resp-active">
-                <%= link_to 'ACCESS', rails_admin_path %>
-                <ul class="dropdown-menu">
-                  <li><!-- Intervention -->
-                    <%= link_to 'INTERVENTION', new_intervention_path %>
-                  </li>
-                  <li><!-- BACKOFFICE -->
-                    <%= link_to 'BACKOFFICE', rails_admin_path %>
-                  </li>
-                </ul>
+            <% if can? :read, Quote %>        
+              <li><!-- Intervention -->
+                <%= link_to 'INTERVENTION', new_intervention_path %>
               </li>
+              <li><!-- BACKOFFICE -->
+                <%= link_to 'BACKOFFICE', rails_admin_path %>
+              </li>    
             <% end %>
             <% if user_signed_in? %>
               <!-- ACCOUNT DROPDOWN -->

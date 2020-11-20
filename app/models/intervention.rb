@@ -5,6 +5,7 @@ class Intervention < ApplicationRecord
   belongs_to :column, optional: true
   belongs_to :elevator, optional: true
   belongs_to :employee, optional: true
+  
   after_create :new_intervention_ticket
 
   def new_intervention_ticket
@@ -23,7 +24,7 @@ class Intervention < ApplicationRecord
                 Battery Id: #{self.battery_id}\n
                 Column Id: #{self.column_id}\n
                 Elevator Id: #{self.elevator_id}\n
-                Employee Id: #{self.employee.first_name} #{self.employee.last_name}\n
+                Employee: #{self.employee.first_name} #{self.employee.last_name}\n
                 Description: #{self.report}"
     },
     :requester => {
