@@ -8,7 +8,7 @@ require 'json'
 module ElevatorMedia
     class Streamer
         def API(input)
-            url = URI("https://covid-193.p.rapidapi.com/countries")
+            url = URI("https://covid-193.p.rapidapi.com/statistics?country=#{input}")
 
             http = Net::HTTP.new(url.host, url.port)
             http.use_ssl = true
@@ -23,4 +23,3 @@ module ElevatorMedia
         end
     end  
 end
-
