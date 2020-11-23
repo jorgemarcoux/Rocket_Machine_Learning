@@ -1,10 +1,6 @@
 require 'ElevatorMedia'
 
-RSpec.describe ElevatorMedia::Streamer do 
-    describe ".API" do
-        context "connect to api" do
-            it 'returns a key-value pair (JSON) structure in case of a good request APIConnect ' do
-            end
-        end
-    end 
+describe 'Streamer' do 
+    describe 'getContent' do
+    end            
 end
