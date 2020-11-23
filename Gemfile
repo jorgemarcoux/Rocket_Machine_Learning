@@ -102,6 +102,8 @@ group :development do
   gem 'capistrano-bundler', '>= 1.1.0'
   gem 'rvm1-capistrano3', require: false
   gem 'capistrano3-puma'
+# TDD
+  gem 'rspec-rails', '~> 4.0.1'
 end
 
 group :test do
@@ -130,6 +132,6 @@ gem "slack-notifier"
 
 gem "zendesk_api"
 
-gem "sendgrid-ruby"
-
 gem "recaptcha", require: "recaptcha/rails" 
+
+gem 'sendgrid-ruby'
