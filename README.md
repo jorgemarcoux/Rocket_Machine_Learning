@@ -11,7 +11,7 @@
     
     TEST DESCRIPTION
     
-    	get_weather_connection
+    get_weather_connection
 		GET request verification: Check if the api return a JSON
 		GET a bad request: Return an error message if the api connection fail
 	get_weather
