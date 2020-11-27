@@ -1,3 +1,47 @@
+# Week 10 - Quality and TDD 
+1- Returns all fields of all Service Request records that do not have a start date and are in "Pending" status:
+
+    APIS
+    Pokemon image : https://pokeapi.co/
+    Weather: https://rapidapi.com/community/api/open-weather-map
+    
+    Test-Drive Development Files : /spec/elevator_media_spec.rb
+    			           /lib/ElevatorMedia.rb
+    TEST DESCRIPTION
+    
+    	get_weather_connection
+		GET request verification: Check if the api return a JSON
+		GET a bad request: Return an error message if the api connection fail
+	get_weather
+		STUB get_weather_connection method: Simulate an API request and make sur the JSON return the right parameters
+		
+	get_pokemon_connection
+		GET request verification: Check if the api return a JSON
+		GET a bad request: Return an error message if the api connection fail
+		
+	get_pokemon
+		STUB get_weather_connection method: Simulate an API request and make sur the JSON return the right parameters
+		
+	get_content
+		GET the weather in Montreal: Make sur the method return a string
+		GET a random pokemon: Make sur the method return a string
+		
+     TEST IN EXISTING CODE
+     	Test-Drive Development Files : /spec/address_spec.rb
+				       /spec/intervention_spec.rb
+				       /spec/lead_spec.rb
+				       /spec/quote_spec.rb
+	Address test: Test if all validation and no errors exist. And test if the object has some specific details
+	
+	Intervention test: Testing if the interventions controller returns a successful HTTP response and an object
+	
+	Lead test: Testing if the interventions controller returns a successful HTTP response and an object
+	
+	Quote: Testing if the interventions controller returns a successful HTTP response and an object
+	
+		
+		
+	
 # Rocket Elevators Foundation Week 9
 
 The main goal for this week was to revisit the concepts and consolidate what we learned in the past 8 weeks by creating a new table, a new form to formulate a request, save those requests in the database, send those request to Zendesk and add an api to return new interventions requests
