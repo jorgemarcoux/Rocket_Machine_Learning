@@ -10,4 +10,7 @@ class StaticPagesController < ApplicationController
 
   def corporate
   end
+  def pokemon
+
+  end
 end
