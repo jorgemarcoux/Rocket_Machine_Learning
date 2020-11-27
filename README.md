@@ -5,7 +5,7 @@
     Pokemon image : https://pokeapi.co/
     Weather: https://rapidapi.com/community/api/open-weather-map
     
-    Test-Drive Development Files : /spec/elevator_media_spec.rb
+    Test-Driven Development Files : /spec/elevator_media_spec.rb
     			           /lib/ElevatorMedia.rb
     ACCES HTML: In the header, CLICK on SERVICES and select POKEMON. Refresh the oage to get a new pokemon!
     
@@ -30,7 +30,7 @@
 		GET a random pokemon: Make sur the method return a string
 		
      TEST IN EXISTING CODE
-     	Test-Drive Development Files : /spec/address_spec.rb
+     	Test-Driven Development Files : /spec/address_spec.rb
 				       /spec/intervention_spec.rb
 				       /spec/lead_spec.rb
 				       /spec/quote_spec.rb
