@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#index'
   get 'static_pages/residential'
   get 'static_pages/corporate'
-
+  get 'static_pages/pokemon'
   devise_for :users, :controllers => { :registrations => "users/registrations", :path_prefix => '', :path => 'u', path_names: { sign_in: 'sign_in', sign_out: 'sign_out', password: 's', confirmation: 'v' }, :sessions => "users/sessions", :passwords => "users/passwords" }
 
 

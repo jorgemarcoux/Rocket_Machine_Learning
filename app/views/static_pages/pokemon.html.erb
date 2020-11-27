@@ -1,0 +1,14 @@
+<div>
+    <%=
+        require './lib/ElevatorMedia'
+        ElevatorMedia::Streamer.new.get_content("weather").html_safe
+
+    %>
+</div>
+<div>
+    <%=
+        # require './lib/ElevatorMedia'
+
+        ElevatorMedia::Streamer.new.get_content("pokemon").html_safe
+    %>
+</div>
