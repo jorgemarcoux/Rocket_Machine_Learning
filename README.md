@@ -34,6 +34,7 @@
 				       /spec/intervention_spec.rb
 				       /spec/lead_spec.rb
 				       /spec/quote_spec.rb
+				       
 	Address test: Test if all validation and no errors exist. And test if the object has some specific details
 	
 	Intervention test: Testing if the interventions controller returns a successful HTTP response and an object
