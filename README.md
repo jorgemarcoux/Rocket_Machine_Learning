@@ -1,12 +1,13 @@
 # Week 10 - Quality and TDD 
-1- Returns all fields of all Service Request records that do not have a start date and are in "Pending" status:
-
+	
+	
     APIS
     Pokemon image : https://pokeapi.co/
     Weather: https://rapidapi.com/community/api/open-weather-map
     
     Test-Drive Development Files : /spec/elevator_media_spec.rb
     			           /lib/ElevatorMedia.rb
+    ACCES HTML: In the header, CLICK on SERVICES and select POKEMON. Refresh the oage to get a new pokemon!
     TEST DESCRIPTION
     
     	get_weather_connection
