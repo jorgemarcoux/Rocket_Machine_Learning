@@ -2,15 +2,15 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
+  # prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
 
   private
-    def check_captcha
-      unless verify_recaptcha
-        self.resource = resource_class.new sign_in_params
-        respond_with_navigational(resource) { render :new }
-      end 
-    end
+    # def check_captcha
+    #   unless verify_recaptcha
+    #     self.resource = resource_class.new sign_in_params
+    #     respond_with_navigational(resource) { render :new }
+    #   end 
+    # end
   # GET /resource/sign_in
   # def new
   #   super
