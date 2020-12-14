@@ -43,9 +43,10 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
-            <li><!-- Recognition -->
-                <%= link_to 'RECOGNITION', new_intervention_path %>
-              </li>
+            <li>
+            <!-- INTERVENTIONS -->
+            <a href="/recognition/recognition.html"> RECOGNITION </a>
+            </li>
             <% if can? :read, Quote %>        
               <li><!-- Intervention -->
                 <%= link_to 'INTERVENTION', new_intervention_path %>

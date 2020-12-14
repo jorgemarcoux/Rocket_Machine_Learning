@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'static_pages/residential'
   get 'static_pages/corporate'
   get 'static_pages/pokemon'
+  get 'recognition/recognition'
   devise_for :users, :controllers => { :registrations => "users/registrations", :path_prefix => '', :path => 'u', path_names: { sign_in: 'sign_in', sign_out: 'sign_out', password: 's', confirmation: 'v' }, :sessions => "users/sessions", :passwords => "users/passwords" }
 
 
