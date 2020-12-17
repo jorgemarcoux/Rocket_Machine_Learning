@@ -18,7 +18,7 @@
           
           <div class="container">
             <div class="row">
-              <div class="col-2">
+              <div class="col">
               <!-- Select language -->
               <br/>
               <h4 class='mt-15'><b>Language:</b></h4>
@@ -55,8 +55,9 @@
                 <option value="zh-TW">Chinese - TW</option>
               </select>
             </div>
+            
           <!--Select Region-->
-          <div class="col-2">
+          <div class="col">
             <h4 class='mt-35'><b>Region:</b></h4>
               <select id="regionOptions">
                 <option value="westus" selected="selected">West US</option>
@@ -69,10 +70,20 @@
                 <option value="westeurope">West Europe</option>
               </select>
           </div>
+
+          <div class="col">
+            <h4> Results:</h4>
+          <textarea id="phraseDiv" class="w-400 h-80"></textarea>
+        <h4>Events:</h4>
+        <textarea id="statusDiv" class="w-400 h-80" >
+        </textarea>
+          </div>
         </div>
       </div>
+
+      
           <!-- i added Enrollement File -->
-          <h4 class='mt-15'><b>Enrollment File</b></h4>
+          <h4><b>Enrollment File</b></h4>
             <input type="file" id="filePicker" accept=".wav" />
 
           <!-- I added Test Identification File -->
@@ -198,16 +209,9 @@
             <button id="speechsdkIntentStartRecognizeOnceAsync" class="mt-15 btn btn-primary">recognizeOnceAsync()</button>
             <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled" class="mt-15 btn btn-primary">STOP
               recognizeOnceAsync()</button>
-
+     <br>
+     <br>
             
-            
-            <h4 class='mt-15'> Results:</h4>
-            <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
-         
-          <h4 class="mt-15">Events:</h4>
-          <textarea id="statusDiv" style="display: inline-block;width:500px;height:200px">
-          </textarea>
-        </div>
     </div><!---End Main Container-->
 
   <!-- Speech SDK REFERENCE -->
