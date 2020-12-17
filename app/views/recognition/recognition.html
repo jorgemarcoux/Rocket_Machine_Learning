@@ -13,15 +13,16 @@
         (microsoft.cognitiveservices.speech.sdk.bundle.js missing).</h1>
     </div>
 
-    <div class="container" >
+    <div class="container">
       <br>
         <h1 class="bg-primary text-white">Speech Recognition With Microsoft Cognitive Services</h1>
-
-          <p>Subscription:*<a href="https://www.microsoft.com/cognitive-services/sign-up"
-              target="_blank"></a>
-          <input id="key" type="text" size="40" value="YOUR_SPEECH_API_KEY"></p>
+         <div class="container">
+          <h4 class='mt-15'><b>Subscription:*</b><a href="https://www.microsoft.com/cognitive-services/sign-up" target="_blank"></a></h4>
+          <input id="key" type="text" size="40" value="YOUR_SPEECH_API_KEY" class="mt-n5">
+          
             <!-- Select language -->
-            <label>Language:</label>
+            <br/>
+            <h4 class='mt-15'><b>Language:</b></h4>
             <select id="languageOptions">
               <option value="ar-EG">Arabic - EG</option>
               <option value="ca-ES">Catalan - ES</option>
@@ -55,7 +56,7 @@
               <option value="zh-TW">Chinese - TW</option>
             </select>
           <!--Select Region-->
-          <label>Region:</label>
+          <h4 class='mt-15'><b>Region:</b></h4>
             <select id="regionOptions">
               <option value="westus" selected="selected">West US</option>
               <option value="westus2">West US2</option>
@@ -68,28 +69,29 @@
             </select>
         
           <!-- i added Enrollement File -->
-          <label>Enrollment File</label>
+          <h4 class='mt-15'><b>Enrollment File</b></h4>
             <input type="file" id="filePicker" accept=".wav" />
 
           <!-- I added Test Identification File -->
-          <label>Test Identification File</label>
+          <h4 class='mt-15'><b>Test Identification File</b></h4>
               <input type="file" id="testFilePicker" accept=".wav" />
           <!-- Create Voice Profile -->
-          <button id="createVoiceProfileButton">Create Voice Profile</button>
-
+          <br>
+          <button id="createVoiceProfileButton" class='mt-15 btn btn-danger'>Create Voice Profile</button>
+          
           <!-- Identify Speaker -->
-          <button id="identifySpeakerButton">Identify Speaker</button></td>
-
+          <button id="identifySpeakerButton" class='mt-15 btn btn-primary'>Identify Speaker</button></td>
+          
           <!-- Delete Voice Profile -->
-         <button id="deleteProfileButton">Delete Voice Profile</button></td>
-
-         <label>Format:</label>
+         <button id="deleteProfileButton" class='mt-15 btn btn-primary'>Delete Voice Profile</button></td>
+         <br>
+         <h4 class='mt-15'><b>Format:</b></h4>
             <select id="formatOptions">
               <option value="Simple" selected="selected">Simple Result</option>
               <option value="Detailed">Detailed Result</option>
             </select>
 
-          <label>Input:</label>
+            <h4 class='mt-15'><b>Input:</b></h4>
             <select id="inputSource">
               <option value="Mic" selected="selected">Microphone</option>
               <option value="File">Audio File</option>
@@ -98,21 +100,22 @@
             </select>
             <input type="file" id="filePicker" accept=".wav" style="display:none" />
           
-            <b>Speech SDK API recognizeOnceAsync:</b>
-          
-            <button id="speechsdkStartRecognizeOnceAsync">recognizeOnceAsync()</button>
-            <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled">STOP recognizeOnceAsync()</button>
-         
-            <b>Speech SDK API Continuous Speech Recognition:</b>
-          
-            <button id="speechsdkStartContinuousRecognition">startContinuousRecognitionAsync()</button>
-            <button id="speechsdkStopContinuousRecognition" disabled="disabled">STOP
-              stopContinuousRecognitionAsync()</button>
+            <h4 class="mt-15">Speech SDK API recognizeOnceAsync:</h4>
+            <button id="speechsdkStartRecognizeOnceAsync" class="mt-15 btn btn-primary">recognizeOnceAsync()</button>
             
-            <b>Speech SDK API Translation:</b>
-          
-            <button id="speechsdkStartContinuousTranslation">startContinuousTranslation()</button>
-            <button id="speechsdkStopContinuousTranslation" disabled="disabled">STOP
+            <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled" class="mt-15 btn btn-primary">STOP recognizeOnceAsync()</button>
+            <br>
+            <br>
+            <h4 class="mt-15">Speech SDK API Continuous Speech Recognition:</h4>
+
+            <button id="speechsdkStartContinuousRecognition" class="mt-15 btn btn-primary">startContinuousRecognitionAsync()</button>
+            <button id="speechsdkStopContinuousRecognition" disabled="disabled" class="mt-15 btn btn-primary">STOP
+              stopContinuousRecognitionAsync()</button>
+            <br>
+            <br>
+            <h4 class="mt-15">Speech SDK API Translation:</h4>
+            <button id="speechsdkStartContinuousTranslation" class="mt-15 btn btn-primary">startContinuousTranslation()</button>
+            <button id="speechsdkStopContinuousTranslation" disabled="disabled" class="mt-15 btn btn-primary">STOP
               stopContinuousTranslation()</button>
 
             <!--Select Target Language-->
@@ -177,28 +180,28 @@
             <input id="voiceOutput" type="checkbox" checked>
             <label for="voiceOutput">voice output</label>
           
-            <b>Speech SDK API Intent Recognition:</b>
+            <h4 class="mt-15">Speech SDK API Intent Recognition:</h4>
           
-            <button id="speechsdkIntentStartRecognizeOnceAsync">recognizeOnceAsync()</button>
-            <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled">STOP
+            <button id="speechsdkIntentStartRecognizeOnceAsync" class="mt-15 btn btn-primary">recognizeOnceAsync()</button>
+            <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled" class="mt-15 btn btn-primary">STOP
               recognizeOnceAsync()</button>
 
-            <label>Application ID:</label>
+            <h4 class="mt-15">Application ID:</h4>
           
-            <input id="appId" type="text" size="60" value="YOUR_LANGUAGE_UNDERSTANDING_APP_ID">(only needed for
-            intent recognition)
-            
-            <label>Phrase List Values:</label>
+            <input id="appId" type="text" size="60" value="YOUR_LANGUAGE_UNDERSTANDING_APP_ID"><b>(only needed for
+            intent recognition)</b>
+            <br>
+            <h4 class="mt-15">Phrase List Values:</h4>
           
-            <input id="phrases" type="text" size="60" value="">(';' separated list)
+            <input id="phrases" type="text" size="60" value=""><b>(';' separated list)</b>
             
-            <label> Results:</label>
+            <h4 class='mt-15'> Results:</h4>
             <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
          
-          <label>Events:</label>
+          <h4 class="mt-15">Events:</h4>
           <textarea id="statusDiv" style="display: inline-block;width:500px;height:200px">
           </textarea>
-         
+        </div>
     </div><!---End Main Container-->
 
   <!-- Speech SDK REFERENCE -->
