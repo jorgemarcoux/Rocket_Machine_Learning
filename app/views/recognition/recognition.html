@@ -7,20 +7,18 @@
 </head>
 
 <body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px;">
+  <div class="container">
+    <br>
+      <h1 class="bg-primary text-white">Speech Recognition With Microsoft Cognitive Services</h1>
+  </div>
   
-  <div id="content" style="display:none">
+  <div id="content" style="display:none" class="container">
     <table>
-      <tr>
-        <td></td>
-        <td>
-          <h1 style="font-weight:500;">Speech Recognition</h1>
-          <h2 style="font-weight:500;">Microsoft Cognitive Services</h2>
-        </td>
-      </tr>
+      
       <tr>
         <td align="right"><a href="https://www.microsoft.com/cognitive-services/sign-up"
             target="_blank">Subscription</a>:*</td>
-        <td><input id="key" type="text" size="40" value="YOUR_SPEECH_API_KEY"><b>YOUR_SPEECH_API_KEY</b></td>
+        <td><input id="key" type="text" size="40" value="YOUR_SPEECH_API_KEY"></td>
       </tr>
       <tr>
         <td align="right">Language:</td>
@@ -100,20 +98,20 @@
 
         <!-- Create Voice Profile -->
         <tr>
-          
-          <td align="right" ><button id="createVoiceProfileButton">Create Voice Profile</button></td>
+          <br>
+          <td align="right" ><button id="createVoiceProfileButton" class="btn btn-danger btn-sm mt-8">Create Voice Profile</button></td>
 
         </tr>
 
         <!-- Identify Speaker -->
         <tr>
-          <td  align="right" ><button id="identifySpeakerButton">Identify Speaker</button></td>
+          <td  align="right" ><button id="identifySpeakerButton" class="btn btn-primary btn-sm mt-8">Identify Speaker</button></td>
 
         </tr>
 
         <!-- Delete Voice Profile -->
         <tr>
-          <td align="right"><button id="deleteProfileButton">Delete Voice Profile</button></td>
+          <td align="right"><button id="deleteProfileButton" class="btn btn-primary btn-sm mt-8">Delete Voice Profile</button></td>
 
         </tr>
 
@@ -148,25 +146,29 @@
         </td>
       </tr>
       <tr>
-        <td align="right"><b>Speech SDK API recognizeOnceAsync:</b></td>
+        <td align="right"><h5>Speech SDK API recognizeOnceAsync:</h5></td>
         <td>
-          <button id="speechsdkStartRecognizeOnceAsync">recognizeOnceAsync()</button>
-          <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled">STOP recognizeOnceAsync()</button>
+          <b></b>
+          <button id="speechsdkStartRecognizeOnceAsync" class="btn btn-primary btn-sm mt-8">recognizeOnceAsync()</button>
+          <button id="speechsdkStopRecognizeOnceAsync" disabled="disabled" class="btn btn-primary btn-sm mt-8">STOP recognizeOnceAsync()</button>
         </td>
       </tr>
+      
       <tr>
-        <td align="right"><b>Speech SDK API Continuous Speech Recognition:</b></td>
+        <td align="right"><h5>Speech SDK API Continuous Speech Recognition:</h5></td>
+        <br>
         <td>
-          <button id="speechsdkStartContinuousRecognition">startContinuousRecognitionAsync()</button>
-          <button id="speechsdkStopContinuousRecognition" disabled="disabled">STOP
+          <button id="speechsdkStartContinuousRecognition" class="btn btn-primary btn-sm mt-8">startContinuousRecognitionAsync()</button>
+          <button id="speechsdkStopContinuousRecognition" disabled="disabled" class="btn btn-primary btn-sm mt-8">STOP
             stopContinuousRecognitionAsync()</button>
         </td>
       </tr>
+    
       <tr>
-        <td align="right"><b>Speech SDK API Translation:</b></td>
+        <td align="right"><h5>Speech SDK API Translation:</h5></td>
         <td>
-          <button id="speechsdkStartContinuousTranslation">startContinuousTranslation()</button>
-          <button id="speechsdkStopContinuousTranslation" disabled="disabled">STOP
+          <button id="speechsdkStartContinuousTranslation" class="btn btn-primary btn-sm mt-8">startContinuousTranslation()</button>
+          <button id="speechsdkStopContinuousTranslation" disabled="disabled" class="btn btn-primary btn-sm mt-8">STOP
             stopContinuousTranslation()</button>
 
           <!-- For a full list of supported languages see: https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech-->
@@ -233,15 +235,16 @@
         </td>
       </tr>
       <tr>
-        <td align="right"><b>Speech SDK API Intent Recognition:</b></td>
+        <td align="right"><h5>Speech SDK API Intent Recognition:</h5></td>
         <td>
-          <button id="speechsdkIntentStartRecognizeOnceAsync">recognizeOnceAsync()</button>
-          <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled">STOP
+          <button id="speechsdkIntentStartRecognizeOnceAsync" class="btn btn-primary btn-sm mt-8">recognizeOnceAsync()</button>
+          <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled" class="btn btn-primary btn-sm mt-8">STOP
             recognizeOnceAsync()</button>
         </td>
       </tr>
       <tr>
-        <td align="right">Application ID:</td>
+        <br>
+        <td align="right" class="mt-15">Application ID:</td>
         <td>
           <input id="appId" type="text" size="60" value="YOUR_LANGUAGE_UNDERSTANDING_APP_ID">(only needed for
           intent recognition)
