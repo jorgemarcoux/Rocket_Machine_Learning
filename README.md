@@ -1,7 +1,7 @@
 # Week 13 - Machine Learning 
 	
 	
-## Members of the team week-4
+## Members of the team 
 
 - **[Anthony Pageau](https://github.com/ricoloic)**
 
