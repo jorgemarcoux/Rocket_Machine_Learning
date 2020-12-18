@@ -8,6 +8,10 @@
 
 <body style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:13px;">
  
+    <div id="warning">
+      <h1 style="font-weight:500;">Speech Recognition Speech SDK not found
+        (microsoft.cognitiveservices.speech.sdk.bundle.js missing).</h1>
+    </div>
 
     <div class="container">
       <br>
@@ -16,74 +20,56 @@
           <h4 class='mt-15'><b>Subscription:*</b><a href="https://www.microsoft.com/cognitive-services/sign-up" target="_blank"></a></h4>
           <input id="key" type="text" size="40" value="YOUR_SPEECH_API_KEY" class="mt-n5">
           
-          <div class="container">
-            <div class="row">
-              <div class="col">
-              <!-- Select language -->
-              <br/>
-              <h4 class='mt-15'><b>Language:</b></h4>
-              <select id="languageOptions">
-                <option value="ar-EG">Arabic - EG</option>
-                <option value="ca-ES">Catalan - ES</option>
-                <option value="da-DK">Danish - DK</option>
-                <option value="da-DK">Danish - DK</option>
-                <option value="de-DE">German - DE</option>
-                <option value="en-AU">English - AU</option>
-                <option value="en-CA">English - CA</option>
-                <option value="en-GB">English - GB</option>
-                <option value="en-IN">English - IN</option>
-                <option value="en-NZ">English - NZ</option>
-                <option value="en-US" selected="selected">English - US</option>
-                <option value="es-ES">Spanish - ES</option>
-                <option value="es-MX">Spanish - MX</option>
-                <option value="fi-FI">Finnish - FI</option>
-                <option value="fr-CA">French - CA</option>
-                <option value="fr-FR">French - FR</option>
-                <option value="hi-IN">Hindi - IN</option>
-                <option value="it-IT">Italian - IT</option>
-                <option value="ja-JP">Japanese - JP</option>
-                <option value="ko-KR">Korean - KR</option>
-                <option value="nb-NO">Norwegian - NO</option>
-                <option value="nl-NL">Dutch - NL</option>
-                <option value="pl-PL">Polish - PL</option>
-                <option value="pt-BR">Portuguese - BR</option>
-                <option value="pt-PT">Portuguese - PT</option>
-                <option value="ru-RU">Russian - RU</option>
-                <option value="sv-SE">Swedish - SE</option>
-                <option value="zh-CN">Chinese - CN</option>
-                <option value="zh-HK">Chinese - HK</option>
-                <option value="zh-TW">Chinese - TW</option>
-              </select>
-            </div>
-            
+            <!-- Select language -->
+            <br/>
+            <h4 class='mt-15'><b>Language:</b></h4>
+            <select id="languageOptions">
+              <option value="ar-EG">Arabic - EG</option>
+              <option value="ca-ES">Catalan - ES</option>
+              <option value="da-DK">Danish - DK</option>
+              <option value="da-DK">Danish - DK</option>
+              <option value="de-DE">German - DE</option>
+              <option value="en-AU">English - AU</option>
+              <option value="en-CA">English - CA</option>
+              <option value="en-GB">English - GB</option>
+              <option value="en-IN">English - IN</option>
+              <option value="en-NZ">English - NZ</option>
+              <option value="en-US" selected="selected">English - US</option>
+              <option value="es-ES">Spanish - ES</option>
+              <option value="es-MX">Spanish - MX</option>
+              <option value="fi-FI">Finnish - FI</option>
+              <option value="fr-CA">French - CA</option>
+              <option value="fr-FR">French - FR</option>
+              <option value="hi-IN">Hindi - IN</option>
+              <option value="it-IT">Italian - IT</option>
+              <option value="ja-JP">Japanese - JP</option>
+              <option value="ko-KR">Korean - KR</option>
+              <option value="nb-NO">Norwegian - NO</option>
+              <option value="nl-NL">Dutch - NL</option>
+              <option value="pl-PL">Polish - PL</option>
+              <option value="pt-BR">Portuguese - BR</option>
+              <option value="pt-PT">Portuguese - PT</option>
+              <option value="ru-RU">Russian - RU</option>
+              <option value="sv-SE">Swedish - SE</option>
+              <option value="zh-CN">Chinese - CN</option>
+              <option value="zh-HK">Chinese - HK</option>
+              <option value="zh-TW">Chinese - TW</option>
+            </select>
           <!--Select Region-->
-          <div class="col">
-            <h4 class='mt-35'><b>Region:</b></h4>
-              <select id="regionOptions">
-                <option value="westus" selected="selected">West US</option>
-                <option value="westus2">West US2</option>
-                <option value="eastus">East US</option>
-                <option value="eastus2">East US2</option>
-                <option value="eastasia">East Asia</option>
-                <option value="southeastasia">South East Asia</option>
-                <option value="northeurope">North Europe</option>
-                <option value="westeurope">West Europe</option>
-              </select>
-          </div>
-
-          <div class="col">
-            <h4> Results:</h4>
-          <textarea id="phraseDiv" class="w-400 h-80"></textarea>
-        <h4>Events:</h4>
-        <textarea id="statusDiv" class="w-400 h-80" >
-        </textarea>
-          </div>
-        </div>
-      </div>
-
-      
+          <h4 class='mt-15'><b>Region:</b></h4>
+            <select id="regionOptions">
+              <option value="westus" selected="selected">West US</option>
+              <option value="westus2">West US2</option>
+              <option value="eastus">East US</option>
+              <option value="eastus2">East US2</option>
+              <option value="eastasia">East Asia</option>
+              <option value="southeastasia">South East Asia</option>
+              <option value="northeurope">North Europe</option>
+              <option value="westeurope">West Europe</option>
+            </select>
+        
           <!-- i added Enrollement File -->
-          <h4><b>Enrollment File</b></h4>
+          <h4 class='mt-15'><b>Enrollment File</b></h4>
             <input type="file" id="filePicker" accept=".wav" />
 
           <!-- I added Test Identification File -->
@@ -99,16 +85,12 @@
           <!-- Delete Voice Profile -->
          <button id="deleteProfileButton" class='mt-15 btn btn-primary'>Delete Voice Profile</button></td>
          <br>
-          <div class="container">
-            <div class="row">
-              <div class="col-2">
          <h4 class='mt-15'><b>Format:</b></h4>
             <select id="formatOptions">
               <option value="Simple" selected="selected">Simple Result</option>
               <option value="Detailed">Detailed Result</option>
             </select>
-          </div>
-            <div class="col-2">
+
             <h4 class='mt-15'><b>Input:</b></h4>
             <select id="inputSource">
               <option value="Mic" selected="selected">Microphone</option>
@@ -117,12 +99,6 @@
             <select id="microphoneSource" style="display:none">
             </select>
             <input type="file" id="filePicker" accept=".wav" style="display:none" />
-          </div>
-          </div>
-          </div>
-
-
-
           
             <h4 class="mt-15">Speech SDK API recognizeOnceAsync:</h4>
             <button id="speechsdkStartRecognizeOnceAsync" class="mt-15 btn btn-primary">recognizeOnceAsync()</button>
@@ -209,9 +185,23 @@
             <button id="speechsdkIntentStartRecognizeOnceAsync" class="mt-15 btn btn-primary">recognizeOnceAsync()</button>
             <button id="speechsdkIntentStopRecognizeOnceAsync" disabled="disabled" class="mt-15 btn btn-primary">STOP
               recognizeOnceAsync()</button>
-     <br>
-     <br>
+
+            <h4 class="mt-15">Application ID:</h4>
+          
+            <input id="appId" type="text" size="60" value="YOUR_LANGUAGE_UNDERSTANDING_APP_ID"><b>(only needed for
+            intent recognition)</b>
+            <br>
+            <h4 class="mt-15">Phrase List Values:</h4>
+          
+            <input id="phrases" type="text" size="60" value=""><b>(';' separated list)</b>
             
+            <h4 class='mt-15'> Results:</h4>
+            <textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea>
+         
+          <h4 class="mt-15">Events:</h4>
+          <textarea id="statusDiv" style="display: inline-block;width:500px;height:200px">
+          </textarea>
+        </div>
     </div><!---End Main Container-->
 
   <!-- Speech SDK REFERENCE -->
@@ -1054,7 +1044,50 @@
 
 
   
-  
+  <div id="content" style="display:none">
+    <table width="100%">
+      <tr>
+        <td></td>
+        <td><h1 style="font-weight:500;">Microsoft Cognitive Services Speech SDK JavaScript Quickstart</h1></td>
+      </tr>
+      <tr>
+        <td align="right"><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started" target="_blank">Subscription</a>:</td>
+        <td><input id="key" type="text" size="40" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Region</td>
+        <td><input id="regionOptions" type="text" size="40" value="westus"></td>
+      </tr>
+      <tr>
+        <td align="right">Enrollment File</td>
+        <td>
+          <input type="file" id="filePicker" accept=".wav" />
+        </td>
+      </tr>
+      <tr>
+        <td align="right">Test Identification File</td>
+        <td>
+          <input type="file" id="testFilePicker" accept=".wav" />
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="createVoiceProfileButton">Create Voice Profile</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="identifySpeakerButton">Identify Speaker</button></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button id="deleteProfileButton">Delete Voice Profile</button></td>
+      </tr>
+      <tr>
+        <td align="right" valign="top">Result</td>
+        <td><textarea id="phraseDiv" style="display: inline-block;width:500px;height:200px"></textarea></td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Speech SDK reference sdk. -->
   <script src="microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
